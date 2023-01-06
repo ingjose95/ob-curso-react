@@ -1,0 +1,3 @@
+- Crear carpeta: "components" > "pure"
+- Crear dentro de "components", la carpeta container, que son de orden superio, que renderizar a los de bajo nivel. Tienen la logica y los datos.
+- Centro de src se craron: components, hooks, pages, routes...
