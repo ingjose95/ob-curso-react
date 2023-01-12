@@ -10,7 +10,9 @@ const LoginForm = () => {
     const InitialCredentials = [
         {
             user: '',
-            password: '' 
+            password: '',
+            email: '',
+            password: '',
         }
     ]
 

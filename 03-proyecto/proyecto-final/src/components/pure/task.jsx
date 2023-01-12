@@ -14,7 +14,7 @@ const TaskComponent = ({task}) => {
     }, [task]);
     return (
         <div>
-            <h2>Nombre: { task.name }</h2>
+            <h2 className='text-5xl'>Nombre: { task.name }</h2>
             <h2>Descripción: { task.description }</h2>
             <h2>Nivel: { task.level }</h2>
             <h2>La tarea está: {task.completed ? 'COMPLETADA':'PENDIENTE'}</h2>
