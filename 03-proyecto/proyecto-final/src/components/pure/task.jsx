@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Task } from '../../models/task.class';
+import '../../styles/task.css'
 
-
+// Se debe importar la hoja de estilo de CSS de task
 const TaskComponent = ({task}) => {
 
     useEffect(() => {
@@ -14,10 +15,10 @@ const TaskComponent = ({task}) => {
     }, [task]);
     return (
         <div>
-            <h2 className='text-5xl'>Nombre: { task.name }</h2>
-            <h2>Descripción: { task.description }</h2>
-            <h2>Nivel: { task.level }</h2>
-            <h2>La tarea está: {task.completed ? 'COMPLETADA':'PENDIENTE'}</h2>
+            <h2 className='task-name'>Nombre: { task.name }</h2>
+            <h2 className='task-name'>Descripción: { task.description }</h2>
+            <h2 className='task-name'>Nivel: { task.level }</h2>
+            <h2 className='task-name'>La tarea está: {task.completed ? 'COMPLETADA':'PENDIENTE'}</h2>
         </div>
     );
 };

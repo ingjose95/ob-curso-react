@@ -2,6 +2,9 @@ import React, {  useState } from 'react';
 import { LEVELS } from '../../models/levels.enum';
 import { Task } from '../../models/task.class';
 import TaskComponent from '../pure/task';
+import '../../styles/task.css'
+
+// Importamos las hoja de estilo de task.css
 
 
 
@@ -21,7 +24,7 @@ const TaskListComponent = () => {
     return (
         <div>
             <div>
-                Tus tareas: 
+                <h1>Tus tareas:</h1> 
             </div>
             <TaskComponent task={ defaultTask }></TaskComponent>
             {/* Aplicar un For/Map para renderizar una lista de tarea  */}
