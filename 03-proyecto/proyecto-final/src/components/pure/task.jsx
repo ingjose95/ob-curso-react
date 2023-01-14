@@ -1,24 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Task } from '../../models/task.class';
-import '../../styles/task.css'
 
-// Se debe importar la hoja de estilo de CSS de task
-const TaskComponent = ({task}) => {
 
-    useEffect(() => {
-        console.log('Created Task')
-
-        return () => {
-            console.log(`Taks: ${task.name} is going to`)
-        };
-    }, [task]);
+const TaskComponent = ( {task} ) => {
     return (
         <div>
-            <h2 className='task-name'>Nombre: { task.name }</h2>
-            <h2 className='task-name'>Descripción: { task.description }</h2>
-            <h2 className='task-name'>Nivel: { task.level }</h2>
-            <h2 className='task-name'>La tarea está: {task.completed ? 'COMPLETADA':'PENDIENTE'}</h2>
+            <h2>Nombre: { task.name }</h2>
+            <h2>Descripción: { task.description }</h2>
+            <h2>Nivel: { task.level }</h2>
+            <h2>Estado de la tarea: { task.completed ? 'COMPLETED':'PENDING' }</h2>
         </div>
     );
 };

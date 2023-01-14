@@ -1,46 +1,37 @@
 import React, { useState } from 'react';
 
 
-// Definiendo estilos en constantes
-
 // ? Estilo para usuario logueado
 
 const loggedStyle = {
-    color: 'white',
+
+    color: 'white'
 }
 
 // ? Estilo para usuario no logueado
 
-const unloggedStyle = {
-    color: ' tomato',
+const unloggedStyled = {
+
+    color: 'tomato',
     fontWeight: 'bold'
 }
 
-
 const GreetingStyled = (props) => {
 
-    // Se genera un estado para el componente
-    // y así controlar si el usuario esta o no logueado
-    
     const [logged, setLogged] = useState(false);
 
-    const greetingUser = () => (<p>Hola, {props.name}</p> );
+    const greetingUser = () => (<p>Hola, {props.name}</p>)
 
-    const pleaseLogin = () => (<p>Please, login</p>)
-
+    const pleaseLogin = () => (<p>Por favor, {props.name}, registrate</p>)
 
 
     return (
-        <div style={ logged ? loggedStyle : unloggedStyle }>
-            { logged ?
-                greetingUser()
-                :
-                pleaseLogin()
-            }
-            <button onClick={ () => {
+        <div style={ logged ? loggedStyle : unloggedStyled }>
+            { logged ? greetingUser() : pleaseLogin() }
+            <button className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 m-5 border border-gray-400 rounded shadow' onClick={ () => {
                 console.log('Botón pulsado');
                 setLogged(!logged);
-            } }> { logged ? 'Logout' : 'Login'} </button>
+            } }> { logged ? 'Logout' : 'Login' }</button>
             
         </div>
     );
