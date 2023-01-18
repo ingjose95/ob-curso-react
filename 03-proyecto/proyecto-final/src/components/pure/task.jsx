@@ -8,7 +8,7 @@ import { LEVELS } from '../../models/levels.enum';
 
 
 
-const TaskComponent = ( {task} ) => {
+const TaskComponent = ( {task, complete, remove } ) => {
 
     function taskLevelBadge() {
 
@@ -46,9 +46,9 @@ const TaskComponent = ( {task} ) => {
 
     function taskCompletedIcon() {
         if(task.completed) {
-            return (<BsToggleOn className='text-green-900 text-2xl'></BsToggleOn>)
+            return (<BsToggleOn onClick={() => complete(task)} className='text-green-900 text-2xl cursor-pointer'></BsToggleOn>)
         } else {
-            return (<BsToggleOff className='text-red-900 text-2xl'></BsToggleOff>)
+            return (<BsToggleOff onClick={() => complete(task)}  className='text-red-900 text-2xl cursor-pointer'></BsToggleOff>)
         }
     }
 
@@ -68,7 +68,7 @@ const TaskComponent = ( {task} ) => {
             </td>
             <td className='align-middle'>
                 {taskCompletedIcon()}
-                <BsTrash className='text-red-700 text-2xl'></BsTrash>
+                <BsTrash  onClick={() => remove(task)} className='text-red-700 text-2xl cursor-pointer'></BsTrash>
             </td>
         </tr>
     );
@@ -77,7 +77,9 @@ const TaskComponent = ( {task} ) => {
 
 TaskComponent.propTypes = {
 
-    task: PropTypes.instanceOf(Task)
+    task: PropTypes.instanceOf(Task),
+    complete: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
 
 };
 
